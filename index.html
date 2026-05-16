@@ -5,18 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عالم ألعاب PS2 | الرئيسية</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; margin: 0; background-color: #eef2f5; color: #333; }
-        header { background: #003791; color: white; padding: 20px 0; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-        nav { background: #002255; padding: 15px; text-align: center; }
-        nav a { color: #fff; margin: 0 20px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: color 0.3s; }
-        nav a:hover { color: #f0a500; }
-        .container { max-width: 1000px; margin: 20px auto; padding: 0 20px; }
-        .hero { text-align: center; padding: 40px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        .hero img { border-radius: 10px; margin-top: 20px; max-width: 100%; height: auto; }
-        .section { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
-        h1, h2 { color: #003791; }
-        ul { margin-right: 20px; }
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+        
+        body { font-family: 'Tajawal', sans-serif; line-height: 1.8; margin: 0; background-color: #0b0c10; color: #c9d1d9; overflow-x: hidden; }
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #0b0c10; }
+        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 5px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00f0ff; }
+        header { background: linear-gradient(135deg, #001f3f, #0b0c10); color: white; padding: 60px 20px; text-align: center; border-bottom: 2px solid #00f0ff; box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2); }
+        @keyframes neonTitle { 0% { background-position: 0% 50%; } 100% { background-position: 200% 50%; } }
+        header h1 { font-size: 3.5em; margin: 0; letter-spacing: 1px; font-weight: 900; background: linear-gradient(90deg, #00f0ff, #fff, #ff00ea, #00f0ff); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: neonTitle 3s linear infinite; filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5)); }
+        header p { font-size: 1.3em; color: #8a9fc2; margin-top: 10px; }
+        nav { background: rgba(11, 12, 16, 0.9); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 240, 255, 0.3); }
+        nav a { color: #ffffff; margin: 0 20px; text-decoration: none; font-weight: bold; font-size: 1.1em; transition: all 0.3s ease; text-transform: uppercase; display: inline-block; padding: 5px 10px; border-radius: 5px; }
+        nav a:hover { color: #00f0ff; text-shadow: 0 0 8px #00f0ff; background: rgba(0, 240, 255, 0.1); transform: translateY(-2px); }
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes imageGlow { 0% { box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(0, 240, 255, 0.3); } 100% { box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 50px rgba(255, 0, 234, 0.6); } }
+        .hero { text-align: center; padding: 50px; background: linear-gradient(145deg, #161b22, #0d1117); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid #30363d; margin-bottom: 50px; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0,240,255,0.05) 0%, transparent 60%); z-index: 0; pointer-events: none; }
+        .hero h2, .hero p, .hero img { position: relative; z-index: 1; }
+        .hero h2 { color: #00f0ff; font-size: 2.5em; margin-bottom: 20px; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.1em; color: #c9d1d9; max-width: 800px; margin: 0 auto 30px auto; line-height: 1.9; }
+        .hero img { border-radius: 15px; max-width: 100%; border: 2px solid #30363d; transition: transform 0.4s ease, border-color 0.4s ease; animation: imageGlow 3s infinite alternate; }
+        .hero img:hover { transform: scale(1.03) translateY(-5px); border-color: #ff00ea; }
+        .section { background: #161b22; padding: 40px; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.4); border: 1px solid #30363d; margin-bottom: 40px; transition: transform 0.4s ease, border-color 0.4s ease; animation: fadeInUp 0.8s ease-out backwards; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.4s; }
+        .section:hover { transform: translateY(-8px) scale(1.01); border-color: #00f0ff; box-shadow: 0 15px 35px rgba(0, 240, 255, 0.15); }
+        h2 { color: #00f0ff; font-weight: 700; font-size: 2em; margin-top: 0; border-bottom: 1px solid #30363d; padding-bottom: 15px; margin-bottom: 20px; }
+        .section:hover h2 { color: #ff00ea; }
+        ul { margin-right: 20px; padding-right: 20px; }
+        li { margin-bottom: 15px; color: #c9d1d9; font-size: 1.1em; transition: color 0.3s ease; }
+        li:hover { color: #ffffff; }
+        strong { color: #58a6ff; font-weight: 700; }
+        footer { text-align: center; padding: 30px; background: #010409; color: #8b949e; border-top: 1px solid #30363d; margin-top: 50px; font-size: 0.9em; box-shadow: 0 -5px 15px rgba(0,0,0,0.5); }
     </style>
 </head>
 <body>
